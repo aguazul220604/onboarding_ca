@@ -1,0 +1,83 @@
+<div class="login-container">
+  <div class="card">
+    <div class="tabs">
+      <button
+        [class.active]="isLoginMode"
+        (click)="isLoginMode = true; errorMessage=''; successMessage=''"
+      >
+        Iniciar Sesión
+      </button>
+      <button
+        [class.active]="!isLoginMode"
+        (click)="isLoginMode = false; errorMessage=''; successMessage=''"
+      >
+        Crear Cuenta
+      </button>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    <div class="alert alert-success" *ngIf="successMessage">
+      {{ successMessage }}
+    </div>
+
+    <form *ngIf="isLoginMode" (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label>Usuario</label>
+        <input
+          type="text"
+          [(ngModel)]="authData.username"
+          name="username"
+          required
+          placeholder="Ingrese su usuario"
+        />
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          [(ngModel)]="authData.password"
+          name="password"
+          required
+          placeholder="••••••••"
+        />
+      </div>
+      <button type="submit" class="btn-primary">Ingresar al sistema</button>
+    </form>
+
+    <form *ngIf="!isLoginMode" (ngSubmit)="onRegister()">
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input
+          type="text"
+          [(ngModel)]="registerData.nombreCompleto"
+          name="nombreCompleto"
+          required
+          placeholder="Ej. Juan Pérez"
+        />
+      </div>
+      <div class="form-group">
+        <label>Nombre de usuario</label>
+        <input
+          type="text"
+          [(ngModel)]="registerData.username"
+          name="regUsername"
+          required
+          placeholder="Crea un identificador"
+        />
+      </div>
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          [(ngModel)]="registerData.password"
+          name="regPassword"
+          required
+          placeholder="Mínimo 6 caracteres"
+        />
+      </div>
+      <button type="submit" class="btn-success">Finalizar registro</button>
+    </form>
+  </div>
+</div>

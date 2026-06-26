@@ -1,0 +1,112 @@
+<div class="onboarding-container">
+  <div class="form-card">
+    <div class="form-header">
+      <h2>Formulario de Onboarding</h2>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    <div class="alert alert-success" *ngIf="successMessage">
+      {{ successMessage }}
+    </div>
+
+    <form (ngSubmit)="onGuardar()">
+      <fieldset class="form-section">
+        <legend>Información personal</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input
+              type="tel"
+              [(ngModel)]="datosForm.telefono"
+              name="telefono"
+              required
+              placeholder="Ej. 5512345678"
+            />
+          </div>
+          <div class="form-group">
+            <label>Fecha de nacimiento</label>
+            <input
+              type="date"
+              [(ngModel)]="datosForm.fechaNacimiento"
+              name="fechaNacimiento"
+              required
+            />
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Dirección</legend>
+        <div class="form-group">
+          <label>Calle y Número</label>
+          <input
+            type="text"
+            [(ngModel)]="datosForm.calle"
+            name="calle"
+            required
+            placeholder="Ej. Av. Reforma #123 Int 4"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ciudad</label>
+            <input
+              type="text"
+              [(ngModel)]="datosForm.ciudad"
+              name="ciudad"
+              required
+              placeholder="Ej. CDMX"
+            />
+          </div>
+          <div class="form-group">
+            <label>Código Postal</label>
+            <input
+              type="text"
+              [(ngModel)]="datosForm.codigoPostal"
+              name="codigoPostal"
+              required
+              placeholder="Ej. 06000"
+            />
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Validación de identidad</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tipo de documento</label>
+            <select
+              [(ngModel)]="datosForm.tipoDocumento"
+              name="tipoDocumento"
+              required
+            >
+              <option value="INE">INE / Identificación Oficial</option>
+              <option value="Pasaporte">Pasaporte</option>
+              <option value="Cédula">Cédula Profesional</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Número de Documento / Clave</label>
+            <input
+              type="text"
+              [(ngModel)]="datosForm.numeroDocumento"
+              name="numeroDocumento"
+              required
+              placeholder="Ej. ABCD123456XYZ"
+            />
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="button" class="btn-secondary" [routerLink]="['/home']">
+          Cancelar
+        </button>
+        <button type="submit" class="btn-submit">Guardar información</button>
+      </div>
+    </form>
+  </div>
+</div>

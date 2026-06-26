@@ -1,0 +1,36 @@
+<div class="home-container">
+  <nav class="navbar">
+    <div class="nav-brand">System Onboarding</div>
+    <button class="btn-logout" (click)="onLogout()">Cerrar sesión</button>
+  </nav>
+
+  <main class="dashboard">
+    <div class="welcome-card">
+      <h1>Hola, {{ nombreCompleto }}</h1>
+      <p class="subtitle">Bienvenido a la plataforma</p>
+
+      <hr class="divider" />
+
+      <div
+        class="status-box"
+        [ngClass]="hasOnboardingData ? 'status-complete' : 'status-pending'"
+      >
+        <p>
+          <strong>Estado de tus datos:</strong> {{ hasOnboardingData ?
+          'Completado con éxito' : 'Pendiente por registrar' }}
+        </p>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn-action btn-primary" [routerLink]="['/onboarding']">
+          {{ hasOnboardingData ? 'Modificar datos' : 'Iniciar formulario de
+          Onboarding' }}
+        </button>
+
+        <button class="btn-action btn-danger" (click)="onEliminarCuenta()">
+          Dar de baja
+        </button>
+      </div>
+    </div>
+  </main>
+</div>

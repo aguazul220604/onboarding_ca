@@ -1,0 +1,137 @@
+.onboarding-container {
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 700px;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 1rem;
+}
+
+.form-header h2 {
+  color: #1a237e;
+  margin: 0 0 0.5rem 0;
+}
+
+.form-header p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.form-section {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #fafafa;
+}
+
+.form-section legend {
+  font-weight: bold;
+  color: #1a237e;
+  padding: 0 10px;
+  font-size: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1a237e;
+  outline: none;
+  box-shadow: 0 0 4px rgba(26, 35, 126, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-actions button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+.btn-secondary:hover {
+  background-color: #d5d5d5;
+}
+
+.btn-submit {
+  background-color: #2e7d32;
+  color: white;
+}
+.btn-submit:hover {
+  background-color: #1b5e20;
+}
+
+.alert {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.alert-danger {
+  background: #ffebe9;
+  color: #ce1c00;
+  border: 1px solid #ffd1cd;
+}
+.alert-success {
+  background: #e6f4ea;
+  color: #137333;
+  border: 1px solid #c2e7cc;
+}
